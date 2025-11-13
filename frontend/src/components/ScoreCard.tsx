@@ -1,3 +1,5 @@
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
+
 interface ScoreCardProps {
   score: {
     overall: number;
@@ -30,6 +32,13 @@ function ScoreCard({ score }: ScoreCardProps) {
     { key: 'sustainability', label: 'Sustainability', icon: '🌱' },
   ];
 
+  // Prepare data for the chart
+  const chartData = metrics.map((metric) => ({
+    name: metric.label,
+    score: score[metric.key as keyof typeof score],
+    icon: metric.icon
+  }));
+
   return (
     <div className="score-card">
       <div className="overall-score">
@@ -48,6 +57,37 @@ function ScoreCard({ score }: ScoreCardProps) {
             {getScoreLabel(score.overall)}
           </p>
         </div>
+      </div>
+
+      {/* Bar Chart Visualization */}
+      <div className="chart-container">
+        <h3>📊 Environmental Metrics Breakdown</h3>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis 
+              dataKey="name" 
+              angle={-45} 
+              textAnchor="end" 
+              height={100}
+              tick={{ fontSize: 12 }}
+            />
+            <YAxis domain={[0, 100]} />
+            <Tooltip 
+              contentStyle={{ 
+                backgroundColor: 'rgba(255, 255, 255, 0.95)', 
+                border: '1px solid #ccc',
+                borderRadius: '8px'
+              }}
+            />
+            <Legend />
+            <Bar dataKey="score" name="Score" radius={[8, 8, 0, 0]}>
+              {chartData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={getScoreColor(entry.score)} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
       </div>
 
       <div className="metrics-grid">

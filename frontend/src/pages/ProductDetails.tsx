@@ -134,7 +134,7 @@ function ProductDetails() {
         {!analysis ? (
           <div className="analyze-section">
             <h2>Environmental Impact Analysis</h2>
-            <p>Click the button below to analyze the environmental impact of this product.</p>
+            <p style={{ marginBottom: '2rem' }}>Click the button below to analyze the environmental impact of this product.</p>
             <button 
               onClick={handleAnalyze} 
               className="btn-primary btn-large"
