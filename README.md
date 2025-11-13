@@ -1,85 +1,42 @@
-# AI Environmental Impact Analyzer
+# 🌍 EcoAnalyzer - AI Environmental Impact Analyzer
 
-A full-stack application that uses AI to analyze the environmental impact of consumer products based on product descriptions, manufacturing details, and supply chain information.
+A full-stack web application that uses artificial intelligence to analyze and score the environmental impact of consumer products based on manufacturing details, materials, and supply chain information.
 
-## Features
+## ✨ Features
 
-- 🌍 **AI-Powered Analysis**: Utilizes OpenAI to analyze product environmental impact
-- 📊 **Environmental Footprint Score**: Generates comprehensive scores for products
-- 🔐 **User Authentication**: Secure user registration and login
-- 📈 **Product History**: Track and compare environmental impacts over time
-- 🎨 **Modern UI**: React-based responsive interface
+- 🤖 **AI-Powered Analysis** - Intelligent environmental impact assessment using OpenAI
+- 📊 **Comprehensive Scoring** - Detailed metrics for carbon footprint, water usage, energy consumption, recyclability, and sustainability
+- 🔐 **User Authentication** - Secure JWT-based authentication system
+- 📱 **Modern UI** - Beautiful, responsive React interface with gradient design
+- 📈 **Analysis History** - Track and compare environmental impacts over time
+- 💡 **Smart Recommendations** - Get actionable insights for more sustainable choices
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-### Backend
+**Frontend:**
+- React 18 + TypeScript
+- Vite
+- React Router
+- Axios
+- CSS3 with animations
+
+**Backend:**
 - Node.js + Express
 - TypeScript
 - MongoDB + Mongoose
-- OpenAI API
 - JWT Authentication
+- OpenAI API integration
 
-### Frontend
-- React + TypeScript
-- Vite
-- React Router
-- Recharts for data visualization
-- Axios for API calls
-
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v18 or higher)
-- MongoDB (local or Atlas)
-- OpenAI API key
+- Node.js (v18+)
+- MongoDB
+- OpenAI API key (optional - falls back to heuristic analysis)
 
 ### Installation
 
 1. Clone the repository
-2. Install dependencies:
 ```bash
-npm run install:all
-```
-
-3. Set up environment variables:
-   - Copy `backend/.env.example` to `backend/.env`
-   - Add your MongoDB URI and OpenAI API key
-
-4. Start the development servers:
-```bash
-npm run dev
-```
-
-This will start:
-- Backend API on http://localhost:5000
-- Frontend on http://localhost:3000
-
-## Project Structure
-
-```
-├── backend/          # Express API server
-│   ├── src/
-│   │   ├── models/   # MongoDB models
-│   │   ├── routes/   # API routes
-│   │   ├── controllers/
-│   │   ├── middleware/
-│   │   ├── services/ # AI analysis service
-│   │   └── server.ts
-│   └── package.json
-├── frontend/         # React application
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── App.tsx
-│   └── package.json
-└── package.json      # Root package.json
-```
-
-## API Endpoints
-
-Coming soon...
-
-## License
-
-MIT
+git clone https://github.com/yourusername/ecoanalyzer.git
+cd ecoanalyzer
